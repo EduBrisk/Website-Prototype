@@ -65,13 +65,14 @@ p{margin:0}
 
 /* ---------- Hero ---------- */
 .hero{position:relative;overflow:hidden;background:var(--mist)}
-.hero-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:24px;align-items:center;min-height:min(760px,calc(100vh - 76px));padding:56px 24px 64px}
+.offer{background:linear-gradient(var(--mist),var(--mist)) top/100% 0 no-repeat}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:24px;align-items:center;min-height:min(640px,calc(100vh - 220px));padding:48px 24px 48px}
 .award{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:.95rem;color:var(--indigo)}
 .award svg{flex:none}
 .hero h1{font-size:clamp(2.9rem,6.4vw,5.6rem);line-height:.98;letter-spacing:-0.04em;font-weight:800;margin:22px 0 24px;max-width:11ch}
-.hero .lede{font-size:clamp(1.15rem,1.6vw,1.35rem);line-height:1.5;color:var(--muted);max-width:30ch}
+.hero .lede{font-size:clamp(1.25rem,2vw,1.6rem);line-height:1.45;color:var(--muted);max-width:26ch}
 .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
-.stats{display:flex;flex-wrap:wrap;gap:0;margin-top:56px;border-top:1px solid var(--line)}
+.stats{display:flex;flex-wrap:wrap;gap:0;margin-top:48px}
 .stat{padding:22px 32px 0 0;margin-right:32px;border-right:1px solid var(--line)}
 .stat:last-child{border-right:0;margin-right:0}
 .stat b{display:block;font-family:var(--display);font-weight:700;font-size:2rem;letter-spacing:-0.03em;line-height:1.1}
@@ -95,9 +96,9 @@ p{margin:0}
 }
 
 /* ---------- Offerings ---------- */
-.offer{padding:112px 0 120px}
+.offer{padding:0 0 112px}
 .offer h2{font-size:clamp(1.9rem,3.6vw,3rem);line-height:1.12;max-width:20ch}
-.offer-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:56px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.offer-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:0;border-top:0;border-bottom:1px solid var(--line)}
 .offer-item{position:relative;display:flex;flex-direction:column;gap:14px;padding:40px 36px 36px;text-decoration:none;border-left:1px solid var(--line);transition:background-color .3s}
 .offer-item:first-child{border-left:0;padding-left:0}
 .offer-item .kicker{font-weight:600;font-size:.95rem;color:var(--coral-ink)}
@@ -112,7 +113,7 @@ p{margin:0}
 .offer-item::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:3px;background:var(--coral);transform:scaleX(0);transform-origin:left;transition:transform .4s cubic-bezier(.2,.7,.2,1)}
 .offer-item:hover::after,.offer-item:focus-visible::after{transform:scaleX(1)}
 @media (max-width:900px){
-  .offer{padding:80px 0}
+  .offer{padding:0 0 80px}
   .offer-row{grid-template-columns:1fr}
   .offer-item,.offer-item:first-child{border-left:0;padding:32px 0;border-top:1px solid var(--line)}
   .offer-item:first-child{border-top:0}
@@ -282,16 +283,7 @@ legend{font-weight:600;font-size:.95rem;margin-bottom:10px}
     <div class="hero-in">
       <p class="award"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F16647" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.5 13.5 17 22l-5-3-5 3 1.5-8.5"/></svg>Winner, Education Innovation Award 2022</p>
       <h1>Schools’ trusted Knowledge Partner</h1>
-      <p class="lede">Pioneers in accelerated and brain-friendly teaching-learning ecosystem</p>
-      <div class="hero-actions">
-        <button class="btn btn-coral" type="button" data-open-form>Book a demo</button>
-        <a class="btn btn-line" href="tel:+919061269990">+91 9061269990</a>
-      </div>
-      <div class="stats">
-        <div class="stat"><b>1,00,000+</b><span>Learners</span></div>
-        <div class="stat"><b>10,000+</b><span>Teachers</span></div>
-        <div class="stat"><b>250+</b><span>Workshops</span></div>
-      </div>
+      <p class="lede">for inclusive academic performance improvement through:</p>
     </div>
     <div class="brain-wrap" role="img" aria-label="A brain drawn as a network of connected neurons, with signals travelling between them">
       <canvas id="brain"></canvas>
@@ -302,7 +294,7 @@ legend{font-weight:600;font-size:.95rem;margin-bottom:10px}
 <!-- ============ Offerings ============ -->
 <section class="offer" aria-labelledby="offer-title">
   <div class="wrap">
-    <h2 id="offer-title">For inclusive academic performance improvement through</h2>
+    <h2 id="offer-title" class="sr-only">Schools’ trusted Knowledge Partner for inclusive academic performance improvement through</h2>
     <div class="offer-row">
       <a class="offer-item" href="https://iaspireseries.com" target="_blank" rel="noopener">
         <span class="kicker">I-Aspire 360</span>
@@ -322,6 +314,11 @@ legend{font-weight:600;font-size:.95rem;margin-bottom:10px}
         <div class="reveal"><div><p>CBSE / ICSE-based VARK tools<br>Learning gap analysis for bridge programs</p></div></div>
         <span class="go">Content &amp; Tools<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F16647" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span>
       </a>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>1,00,000+</b><span>Learners</span></div>
+      <div class="stat"><b>10,000+</b><span>Teachers</span></div>
+      <div class="stat"><b>250+</b><span>Workshops</span></div>
     </div>
   </div>
 </section>
